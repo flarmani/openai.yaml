@@ -24,11 +24,19 @@ paths:
             application/json:
               schema:
                 type: object
+                properties: {}
       security:
         - rapidapiKey: []
+      headers:
+        X-RapidAPI-Host:
+          required: true
+          schema:
+            type: string
+            example: perodriguez1-league-of-legends-v1.p.rapidapi.com
 components:
   securitySchemes:
     rapidapiKey:
       type: apiKey
       in: header
       name: X-RapidAPI-Key
+  schemas: {}

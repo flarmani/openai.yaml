@@ -1,16 +1,22 @@
 openapi: 3.1.0
 info:
-  title: League of Legends API (via RapidAPI)
-  description: Access League of Legends item data via the RapidAPI-hosted API.
+  title: League Patch Proxy API
+  description: Real-time access to Riot's champion and item data via a custom proxy.
   version: 1.0.0
 servers:
-  - url: https://perodriguez1-league-of-legends-v1.p.rapidapi.com
+  - url: https://leagserver.onrender.com  # Use your real Render domain here
 paths:
-  /lol/items:
+  /champions:
     get:
-      operationId: getItems
-      summary: Retrieve League of Legends item data
+      operationId: getChampions
+      summary: Get up-to-date champion data
       parameters:
+        - name: version
+          in: query
+          required: false
+          schema:
+            type: string
+            example: 14.9.1
         - name: lang
           in: query
           required: false
@@ -19,24 +25,34 @@ paths:
             example: en_US
       responses:
         '200':
-          description: A list of items in JSON format
+          description: Champion data
           content:
             application/json:
               schema:
                 type: object
                 properties: {}
-      security:
-        - rapidapiKey: []
-      headers:
-        X-RapidAPI-Host:
-          required: true
+  /items:
+    get:
+      operationId: getItems
+      summary: Get up-to-date item data
+      parameters:
+        - name: version
+          in: query
+          required: false
           schema:
             type: string
-            example: perodriguez1-league-of-legends-v1.p.rapidapi.com
-components:
-  securitySchemes:
-    rapidapiKey:
-      type: apiKey
-      in: header
-      name: X-RapidAPI-Key
-  schemas: {}
+            example: 14.9.1
+        - name: lang
+          in: query
+          required: false
+          schema:
+            type: string
+            example: en_US
+      responses:
+        '200':
+          description: Item data
+          content:
+            application/json:
+              schema:
+                type: object
+                properties: {}

@@ -23,7 +23,7 @@ paths:
           content:
             application/json:
               schema:
-                type: object  # <--- this was missing!
+                type: object
       security:
         - rapidapiKey: []
 components:

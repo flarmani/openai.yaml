@@ -1,0 +1,27 @@
+Effective Date: May 1, 2025
+
+This GPT ("League Pick and Rune Coach") uses external APIs to provide League of Legends-related information, such as item data, champion information, and gameplay tips. This policy explains how data is handled when you interact with this assistant.
+1. Data Collection
+
+This GPT does not store or retain any personal data. However, when you ask it to retrieve game data, it may send requests to external services (e.g., RapidAPI's League of Legends API).
+
+These API calls may include:
+
+    Language preference (English)
+
+    Publicly available game data
+
+No personal identifiers (like name, email, or IP address) are collected or stored by this GPT itself.
+2. Use of External APIs
+
+API responses are fetched in real-time from:
+
+    perodriguez1-league-of-legends-v1.p.rapidapi.com
+
+These services have their own privacy policies. We do not control or store their data.
+3. Data Sharing
+
+No personal data is shared with third parties. Only anonymous game-related queries are sent to the API provider.
+4. Contact
+
+If you have any questions, contact the developer at: your@email.com (whenarmin@outlook.com)

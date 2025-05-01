@@ -1,0 +1,38 @@
+openapi: 3.1.0
+info:
+  title: League of Legends API (via RapidAPI)
+  description: Access League of Legends item data via the RapidAPI-hosted API.
+  version: 1.0.0
+servers:
+  - url: https://perodriguez1-league-of-legends-v1.p.rapidapi.com
+paths:
+  /lol/items:
+    get:
+      operationId: getItems
+      summary: Retrieve League of Legends item data
+      parameters:
+        - name: lang
+          in: query
+          required: false
+          schema:
+            type: string
+            example: en_US
+      responses:
+        '200':
+          description: A list of items in JSON format
+          content:
+            application/json:
+              schema:
+                type: object
+      security:
+        - rapidapiKey: []
+components:
+  securitySchemes:
+    rapidapiKey:
+      type: apiKey
+      in: header
+      name: X-RapidAPI-Key
+    rapidapiHost:
+      type: apiKey
+      in: header
+      name: X-RapidAPI-Host

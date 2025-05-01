@@ -23,7 +23,7 @@ paths:
           content:
             application/json:
               schema:
-                type: object
+                type: object  # <--- this was missing!
       security:
         - rapidapiKey: []
 components:
@@ -32,7 +32,3 @@ components:
       type: apiKey
       in: header
       name: X-RapidAPI-Key
-    rapidapiHost:
-      type: apiKey
-      in: header
-      name: X-RapidAPI-Host
